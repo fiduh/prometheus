@@ -14,3 +14,12 @@
 `sudo chown prometheus:prometheus /etc/prometheus`
 `sudo chown prometheus:prometheus /var/lib/prometheus `
 
+### Download Prometheus and untar it and copy the binary to user/local/bin
+`sudo cp prometheus /usr/local/bin/`
+
+### Copy Promtool as well
+`sudo cp promtool /usr/local/bin/`
+
+### Update the permissions for the two files
+`sudo chown prometheus:prometheus /usr/local/bin/prometheus`
+`sudo chown prometheus:prometheus /usr/local/bin/promtool`
