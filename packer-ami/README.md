@@ -2,7 +2,7 @@
 ### Prometheus Installation using HashiCorp Packer and AWS AMI
 
 ### Create a Prometheus User that's incapable of logging in
-`sudo useradd --no-create-home --shell /bin/false Prometheus`
+`sudo useradd --no-create-home --shell /bin/false prometheus`
 
 ### Create a folder in /etc to store the configuration file
 `sudo mkdir /etc/prometheus` 
