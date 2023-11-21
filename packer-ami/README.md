@@ -58,7 +58,35 @@ sudo -u prometheus /usr/local/bin/prometheus \
 ```
 
 
+### Create a unit service file for the Prometheus server 
+`sudo vi /etc/systemd/system/prometheus.service`
 
+```
+[Unit]
+Description=Promethues
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=promethues
+Group=promethues
+Type=simple
+ExecStart= /usr/local/bin/prometheus \
+  --config.file /etc/prometheus/prometheus.yml \
+  --storage.tsdb.path /var/lib/prometheus/ \
+  --web.console.templates=/etc/promethues/consoles \
+  --web.console.libraries=/etc/promethues/console_libraries
+
+[Install]
+Wanted=multi-user.target
+
+```
+
+### Since we change the unit file, we have to relaod systemctl daemon
+```bash
+sudo systemctl daemon-reload
+sudo systemctl start prometheus
+```
 
 
 
