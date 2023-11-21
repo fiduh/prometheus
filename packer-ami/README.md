@@ -47,3 +47,46 @@ sudo chown -R prometheus:prometheus /etc/prometheus/consoles_libraries
 sudo cp prometheus.yaml /etc/prometheus/prometheus.yml
 sudo chown prometheus:prometheus /etc/prometheus/prometheus.yml
 ```
+### The command to start prometheus
+
+```bash
+sudo -u prometheus /usr/local/bin/prometheus \
+--config.file /etc/prometheus/prometheus.yml \
+--storage.tsdb.path /var/lib/prometheus/ \
+--web.console.templates=/etc/promethues/consoles \
+--web.console.libraries=/etc/promethues/console_libraries
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
