@@ -85,7 +85,7 @@ Wanted=multi-user.target
 ### Since we change the unit file, we have to relaod systemctl daemon
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl start prometheus
+sudo systemctl enable prometheus --now
 ```
 
 
